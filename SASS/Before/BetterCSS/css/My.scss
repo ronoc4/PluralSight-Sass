@@ -1,6 +1,18 @@
 @import "init.css";
-@import "colors";
 
+$app-size: 1024px;
+$color: #A03133;
+$headerColor: #E7AA3C;
+$mainColor: black;
+$baseFontSize: 18px;
+$rootPath: "http://localhost:8000/";
+
+$paddingBase: 15px;
+
+
+@function center-width($gutter){
+  @return $app-size - ($gutter * 2);
+}
 
 /* Basics */
 html
@@ -30,7 +42,7 @@ h3
 #container
 {
   margin-top:5px;
-  width: 800px;
+  width: center-width(100px);
   margin-left: auto;
   margin-right: auto;
   background: complement($color);
@@ -44,6 +56,7 @@ h3
 /* Sections */
 header h1
 {
+  @extend nav;
   font-size: $baseFontSize + 10px;
   font-family: 'Share', cursive;
   color: $headerColor;
